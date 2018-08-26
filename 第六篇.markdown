@@ -1,0 +1,11 @@
+#<center>王梦龙的读书笔记</center>
+##<center>java 的NIO</center>
+---
+###BIO的问题：
++ 传统的BIO模型是阻塞接受传来的IO流，并且保存到本地，回造成线程的阻塞，从而导致线程失去CPU资源，导致线程效率低下。
++ 在BIO模型中，可以通过多线程来实现另起一个线程来接受IO信号，但另外启动线程的开销比较大，即使通过线程池技术，线程之间的切换也会影响效率。
+###NIO的解决方案
++ nio引进了channel,selector,Buffer缓冲来解决这个问题。
++ channel 类似与IO中的流，但是channel 并不面向字节，而是面向字符，与BUffer缓存来交互提供数据。IO的管道中的流是单向的，而channel是双向的。
++ selector 是Java中对channel进行调度的类，channel需要在selector中进行注册，来监听需要的操作。
++ buffer 中的缓存。
